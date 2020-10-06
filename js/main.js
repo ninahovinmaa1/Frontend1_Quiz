@@ -10,6 +10,7 @@ function buildQuiz() {
        const answers =[];                                //variable to store the list of possible answers
 
        
+       
         for(letter in currentQuestion.answers){          // and for each available answer...The for/in statement loops through the properties of an object.
                                                         // ...add an HTML checkbox/radiobutton
             answers.push(
