@@ -22,13 +22,32 @@ function buildQuiz() {     // will run immediately
         );
      });         
     
-   quizContainer.innerHTML = output.join('');                                             // finally combine our output list into one string of HTML and put it on the page
+   quizContainer.innerHTML = output.join('');  // finally combine our output list into one string of HTML and put it on the page
 }
 
  // runs when user clicks submit
 function showResults() {
-    //const answerContainers = quizContainer.querySelectorAll('.answers');
-}              
+
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    // counter of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+        // find selected answer
+        const answerContainer = answerContainers[questionNumber];
+        const selector = `input[name=question${questionNumber}]:checked`;
+        
+        const userAnswers = answerContainer.querySelectorAll(selector);  // not working. trying to get multiple correct answers
+        for (let checkbox of userAnswers) {
+            checkbox.checked = true;
+}           console.log(checkbox);
+        //const userAnswer = (answerContainer.querySelectorAll(selector) ||{}); //answers or not answered
+        
+        
+    })
+};              
 
 
 
@@ -36,22 +55,27 @@ function showResults() {
 
 const quizContainer = document.getElementById("quiz");
 const resultsContainer = document.getElementById("results");
-const submitButton = document.getElementById("submit");
+const start_quiz = document.getElementById("btn_start_quiz");
+const submit_quiz = document.getElementById("btn-submit-quiz");
 let myQuestions = [];
 
 //-------main-----------//  
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    let start_quiz = document.getElementById("btn_start_quiz");
     start_quiz.addEventListener("click", async function(e) {
 
-        await fetch('https://quizapi.io/api/v1/questions?apiKey=DzqPPQrygBSBX2YJQ10caUO91MtOWmACoFhEsKYg&limit=5')
+        await fetch('https://quizapi.io/api/v1/questions?apiKey=DzqPPQrygBSBX2YJQ10caUO91MtOWmACoFhEsKYg&limit=10')
             .then(response => response.json())
             .then(data => {myQuestions = Array.from(data)});  
         
-            buildQuiz(); //display quiz       
+            buildQuiz(); //display quiz    
     });    
+
+    submit_quiz.addEventListener("click", function(e) {
+        showResults();
+
+    })
 });
                      
 
