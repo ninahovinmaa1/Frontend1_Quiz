@@ -39,14 +39,15 @@ function showResults() {
         const answerContainer = answerContainers[questionNumber];
         const selector = `input[name=question${questionNumber}]:checked`;
         
-        const userAnswers = (answerContainer.querySelector(selector) || {}).value;  //  Trying to get multiple correct answers with querySelectorAll->Nodelist-array, undefined. Check use of .value for arrayen. TODO
-        console.log(userAnswers) //eget labb
-        // for (let checkbox of userAnswers) {
-        //    checkbox.checked = true;
-       //    console.log(checkbox);
-        //const userAnswer = (answerContainer.querySelectorAll(selector) ||{}); //answers or not answered
+        const userAnswers = (answerContainer.querySelectorAll(selector) ||{});  //  Trying to get multiple correct answers with querySelectorAll->Nodelist-array, undefined. Check use of .value for arrayen. Expected answer_a TODO
         
-        
+        for (let userAnswer of userAnswers) {
+            // if answer is correct
+          //  if(userAnswer.value === currentQuestion.correctAnswer){  //answer_c === "answer_c_correct":"true" //str.includes(answer_"letter etc + true)
+                // add to the number of correct answers
+          //      numCorrect++;
+           // }
+        }   
     })
 };              
 
