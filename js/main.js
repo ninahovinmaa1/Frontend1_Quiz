@@ -46,18 +46,19 @@ function showResults() {
             return Object.keys(object).find(key => object[key] === value);
           }
         
-        const correctAnswer = getKeyByValue(correctAnswers,"true"); //answer_i_correct
-        //console.log(userAnswers) //helper 
+        const correctAnswer = getKeyByValue(correctAnswers,"true"); // key: answer_i_correct, value: "true"
         
+        //for each userAnswer from all userAnswers for a specific question...
         for (let userAnswer of userAnswers) {
-            // if answer is correct
-            if(correctAnswer.includes(userAnswer.value)){  //answer_c === "answer_c_correct":"true" //str.includes(answer_"letter etc + true)
-                console.log("correct answer")
-                // add to the number of correct answers
-                // numCorrectAnswers++;
+            // if answer is correct... (checked if user answer answer_x is included in the string correctAnswer answer_x_correct)
+            if(correctAnswer.includes(userAnswer.value)){ 
+                // if true, increase the number of correct answers
+                numCorrectAnswers++;
             }
        }   
     })
+    // show number of correct answers out of total
+    resultsContainer.innerHTML = `${numCorrectAnswers} out of ${myQuestions.length}`;
 };              
 
 
