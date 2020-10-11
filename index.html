@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <title>Start Quiz!</title>
 </head>
 <body>
-    <button type="button" id="btn_start_quiz">Start quiz!</button>
-    <div id="quiz"></div>
-    <button type="button" id="btn-submit-quiz">Submit Quiz</button>
-    <div id="results"></div>
+    <div id="startScreen">
+        <div>
+          <h1>Starta quiz</h1>
+        </div>
+        <div>
+          <p>Fyll i namnet på spelaren och klicka på start-knappen!</p>
+          <input type="text" id="player-name-input" placeholder="spelare1">
+          <a href="quiz.html" id="start-quiz-link">Starta quiz</a>
+        </div>
+    </div>
 
-    <script src="js/main.js"></script>
-    <script src="js/player.js"></script>
+      <script src="js/startquiz.js"></script>
 </body>
 </html>
