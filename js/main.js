@@ -39,15 +39,22 @@ function showResults() {
         const answerContainer = answerContainers[questionNumber];
         const selector = `input[name=question${questionNumber}]:checked`;
         const userAnswers = (answerContainer.querySelectorAll(selector) ||{});  //  Trying to get multiple correct answers with querySelectorAll->Nodelist-array, undefined. Check use of .value for arrayen. Expected answer_a TODO
-        
-        for (let userAnswer of userAnswers) {
-            console.log(currentQuestion.correctAnswer)
+        const correctAnswers = currentQuestion.correct_answers;
+
+        //Helper function. Gets correct answer by finding the key to value true. Key example: answer_b_correct, Value example: "true"
+        function getKeyByValue(object, value) {
+            return Object.keys(object).find(key => object[key] === value);
+          }
+          const correctAnswer = getKeyByValue(correctAnswers,"true");
+          console.log(correctAnswer)  //answer_i_correct
+          
+        //for (let userAnswer of userAnswers) {
             // if answer is correct
           //  if(userAnswer.value === currentQuestion.correctAnswer){  //answer_c === "answer_c_correct":"true" //str.includes(answer_"letter etc + true)
                 // add to the number of correct answers
           //      numCorrect++;
            // }
-        }   
+       // }   
     })
 };              
 
