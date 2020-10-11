@@ -59,7 +59,11 @@ function showResults() {
     })
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrectAnswers} out of ${myQuestions.length}`;
-};              
+};    
+
+function askContinueGame() {
+
+}
 
 
 
@@ -67,26 +71,23 @@ function showResults() {
 
 const quizContainer = document.getElementById("quiz");
 const resultsContainer = document.getElementById("results");
-const start_quiz = document.getElementById("btn_start_quiz");
 const submit_quiz = document.getElementById("btn-submit-quiz");
 let myQuestions = [];
 
 //-------main-----------//  
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", async function(){
 
-    start_quiz.addEventListener("click", async function(e) {
 
-        await fetch('https://quizapi.io/api/v1/questions?apiKey=DzqPPQrygBSBX2YJQ10caUO91MtOWmACoFhEsKYg&limit=10')
-            .then(response => response.json())
-            .then(data => {myQuestions = Array.from(data)});  
-        
-            buildQuiz(); //display quiz    
-    });    
+    await fetch('https://quizapi.io/api/v1/questions?apiKey=DzqPPQrygBSBX2YJQ10caUO91MtOWmACoFhEsKYg&limit=10')
+        .then(response => response.json())
+        .then(data => {myQuestions = Array.from(data)});  
+    
+    buildQuiz(); //display quiz        
 
     submit_quiz.addEventListener("click", function(e) {
         showResults();
-
+        askContinueGame();
     })
 });
                      
