@@ -61,7 +61,13 @@ function showResults() {
     resultsContainer.innerHTML = `${numCorrectAnswers} out of ${myQuestions.length}`;
 };    
 
-function askContinueGame() {
+function askStartANewGame() {
+    //<a href="quiz.html" id="start-quiz-link">Starta quiz!</a>
+    let newA = document.createElement("a");
+    resultsContainer.appendChild(newA).setAttribute("id", "link");
+    let refToA = document.getElementById("link");
+    refToA.setAttribute("href", "index.html");
+    refToA.innerHTML = "Click here to start a new quiz!"
 
 }
 
@@ -87,7 +93,8 @@ document.addEventListener("DOMContentLoaded", async function(){
 
     submit_quiz.addEventListener("click", function(e) {
         showResults();
-        askContinueGame();
+        askStartANewGame()
+
     })
 });
                      
