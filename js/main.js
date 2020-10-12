@@ -13,12 +13,12 @@ function buildQuiz() {     // will run immediately
                                                         // ...add an HTML checkbox/radiobutton
             answers.push(
 
-                '<label><input type="checkbox" name="question'+ questionNumber +'"'+ ' value="'+ letter +'"><br>'+ letter + ':' + currentQuestion.answers[letter]+'</label>'
+                '<label><input type="checkbox" name="question'+ questionNumber +'"'+ ' value="'+ letter +'">'+ letter + ':' + currentQuestion.answers[letter]+'</label>'
             )
         }
         
         output.push(                                  // add this question and its answers to the output
-        '<div class="question">' + currentQuestion.question + '<div>' + '<div class="answers">' + answers.join()+'</div>'
+        '<div class="question">' + currentQuestion.question + '</div>' + '<div class="answers">' + answers.join()+'</div>'
         );
      });         
     
