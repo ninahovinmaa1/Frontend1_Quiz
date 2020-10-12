@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", async function(){
     
     buildQuiz(); //display quiz        
 
-    submit_quiz.addEventListener("click", function(e) {
+    submit_quiz.addEventListener("click", function(e) { //submit quiz, show results and provides a lin to start a new game
         showResults();
         askStartANewGame()
 
