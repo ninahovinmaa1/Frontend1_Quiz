@@ -1,20 +1,9 @@
-/*
-class Player {
-    constructor (name) {
-        this.name = name;
-        this.quizScores = [];
-        this.currentScore = 0;
-    };
-};
-*/
 
 class Player {
   constructor(name) {
     this.name = name;
     this.quizScores = [];
-    this.currentScore = 0;
   }
-
 
   showMessage () {
       console.log("player created")

@@ -1,4 +1,12 @@
-
+class Game {
+    constructor(questions) {
+        //this.player = "name from Player class" //how to? 
+        this.questionsFromApi = questions;
+    }
+    //add function buildQuiz here
+    //add function showResults here
+    //add function askStartANewGame here
+}
 //------Functions------------//
 
 function buildQuiz() {     // will run immediately
@@ -87,7 +95,13 @@ document.addEventListener("DOMContentLoaded", async function(){
 
     await fetch('https://quizapi.io/api/v1/questions?apiKey=DzqPPQrygBSBX2YJQ10caUO91MtOWmACoFhEsKYg&limit=10')
         .then(response => response.json())
-        .then(data => {myQuestions = Array.from(data)});  
+        .then(data => {
+            myQuestions = Array.from(data);
+            let game = new Game(myQuestions);
+            console.log(game)
+        });  
+
+    
     
     buildQuiz(); //display quiz        
 
