@@ -5,7 +5,7 @@ Din applikation ska vara objektorienterad. Du ska visa att du kan skapa lämplig
 Det kommer att vara högre fokus på det i denna uppgift än i gruppuppgiften, eftersom ni 
 kan börja att skriva era applikationer objektorienterat från början nu.
 Quizet ska hålla reda på en spelare. Det ska hantera spelarens namn, spelarens poäng i 
-den aktuella omgången. TODO
+den aktuella omgången.
 Frågorna ska läsas in från https://quizapi.io/ som levererar ett resultat i JSON. DONE
 Du måste använda ditt omdöme och göra en analys av kraven för att kunna leva upp till dem.
 
@@ -14,11 +14,11 @@ G-krav
 Spelet ska innehålla 10 frågor. DONE
 Man ska kunna välja flera svar. Ibland kan ett alternativ vara rätt, ibland flera. DONE
 När omgången är slut ska poängen visas och användaren ska få välja att starta ett nytt 
-spel med nya frågor. TODO
+spel med nya frågor. DONE
 Skriv minst en klass som innehåller minst en metod och minst en egenskap. DONE
 Du får inte använda inline-css eller inline-event (t ex <p style="color:red" onlick="something();">) DONE
-Du ska använda minst en array-funktion som gör något med varje värde i arrayen, såsom map, filter eller reduce. TODO
-Lämna in projektet som ett git-repo. WIP
+Du ska använda minst en array-funktion som gör något med varje värde i arrayen, såsom map, filter eller reduce. DONE
+Lämna in projektet som ett git-repo. DONE
 
 VG-krav:
 

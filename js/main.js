@@ -61,7 +61,8 @@ function showResults() {
     let sumCorrectAnswers = numCorrectAnswers.reduce((acc, currentValue, currIndex, array) => { //reduces numCorrectAnswers from [1,1,1,1] to 4.
         return acc + currentValue}, 0)
 
-    resultsContainer.innerHTML = `${sumCorrectAnswers} out of ${myQuestions.length}`;
+
+    resultsContainer.innerHTML = `${sumCorrectAnswers} out of ${myQuestions.length}`; //show results in HTML
 };    
 
 function askStartANewGame() {
@@ -83,7 +84,7 @@ const resultsContainer = document.getElementById("results");
 const submit_quiz = document.getElementById("btn-submit-quiz");
 let myQuestions = [];
 
-//-------main-----------//  
+//-------MAIN QUIZ-----------//  
 
 document.addEventListener("DOMContentLoaded", async function(){
 
@@ -92,16 +93,14 @@ document.addEventListener("DOMContentLoaded", async function(){
         .then(response => response.json())
         .then(data => {
             myQuestions = Array.from(data);
-            console.log(myQuestions)
         });  
     
     buildQuiz(); //display quiz        
 
-    submit_quiz.addEventListener("click", function(e) { //submit quiz, show results and provides a lin to start a new game
+    submit_quiz.addEventListener("click", function(e) { //submit quiz, show results and provide a link to start a new game
         showResults();
-        askStartANewGame()
-
-    })
+        askStartANewGame();
+    });
 });
                      
 

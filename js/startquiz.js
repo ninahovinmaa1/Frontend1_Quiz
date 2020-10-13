@@ -1,18 +1,5 @@
 
-class Player {
-  constructor(name) {
-    this.name = name;
-    this.quizScores = [];
-    this.currentScore = 0;
-  }
-
-
-  showMessage () {
-      console.log("player created")
-  }
-};
-
-//---------MAIN-------------//
+//---------MAIN START QUIZ-------------//
 
 document.addEventListener("DOMContentLoaded", () => {
 
