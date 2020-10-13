@@ -87,7 +87,10 @@ document.addEventListener("DOMContentLoaded", async function(){
 
     await fetch('https://quizapi.io/api/v1/questions?apiKey=DzqPPQrygBSBX2YJQ10caUO91MtOWmACoFhEsKYg&limit=10')
         .then(response => response.json())
-        .then(data => {myQuestions = Array.from(data)});  
+        .then(data => {
+            myQuestions = Array.from(data);
+            console.log(myQuestions)
+        });  
     
     buildQuiz(); //display quiz        
 
