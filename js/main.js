@@ -31,7 +31,7 @@ function showResults() {
     const answerContainers = quizContainer.querySelectorAll('.answers');
     
     // counter of user's answers
-    let numCorrectAnswers = 0;
+    let numCorrectAnswers = [];
 
     // for each question...
     myQuestions.forEach((currentQuestion, questionNumber) => {
@@ -53,12 +53,15 @@ function showResults() {
             // if answer is correct... (checked if user answer answer_x is included in the string correctAnswer answer_x_correct)
             if(correctAnswer.includes(userAnswer.value)){ 
                 // if true, increase the number of correct answers
-                numCorrectAnswers++;
+                numCorrectAnswers.push(1);
             }
        }   
     })
     // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrectAnswers} out of ${myQuestions.length}`;
+    let sumCorrectAnswers = numCorrectAnswers.reduce((acc, currentValue, currIndex, array) => { //reduces numCorrectAnswers from [1,1,1,1] to 4.
+        return acc + currentValue}, 0)
+
+    resultsContainer.innerHTML = `${sumCorrectAnswers} out of ${myQuestions.length}`;
 };    
 
 function askStartANewGame() {
